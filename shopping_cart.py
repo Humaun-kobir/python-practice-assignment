@@ -1,33 +1,43 @@
-# Example Output
-# Student Name: Rahim
-# Total Marks: 245
-# Average: 81.67
-# Grade: A+
-
-name = input("Enter student's name: ")
-
-sub1 = int(input("Enter marks for subject 1: "))
-sub2 = int(input("Enter marks for subject 2: "))
-sub3 = int(input("Enter marks for subject 3: "))
+# Customer Name: Rahim
+# Product 1: Keyboard
+# Price: 1500
+# Product 2: Mouse
+# Price: 800
+# Product 3: Headphone
+# Price: 2000
 
 
-total_marks = sub1 + sub2 + sub3
-average = total_marks / 3
+name = input("Enter customer name: ")
+
+p1_name = input("Product 1 name: ")
+p1_price = float(input("Product 1 price: "))
+
+p2_name = input("Product 2 name: ")
+p2_price = float(input("Product 2 price: "))
+
+p3_name = input("Product 3 name: ")
+p3_price = float(input("Product 3 price: "))
 
 
-if average >= 80:
-  grade = "A+"
-elif average >= 70:
-  grade = "A"
-elif average >= 60:
-  grade = "B"
-elif average >= 50:
-  grade = "C"
+subtotal = p1_price + p2_price + p3_price
+
+if subtotal >= 5000:
+  rate = 0.20
+elif subtotal >= 3000:
+  rate = 0.10
+elif subtotal >= 1000:
+  rate = 0.05
 else:
-  grade = "F"
+  rate = 0.0
 
-print()
-print("Student Name:", name)
-print("Total Marks:", total_marks)
-print("Average:", average)
-print("Grade:", grade)
+discount = subtotal * rate
+final_total = subtotal - discount
+
+
+print("\nCustomer Name:", name)
+print("Product 1:", p1_name, "-", p1_price)
+print("Product 2:", p2_name, "-", p2_price)
+print("Product 3:", p3_name, "-", p3_price)
+print("Subtotal:", subtotal)
+print("Discount:", discount)
+print("Final Total:", final_total)
